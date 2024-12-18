@@ -1,5 +1,28 @@
 # AppDragonBall
 
+## Temas Implementados
+
+- Implementación de Tailwind.
+- Router Module.
+- RouterLink y RouterLinkOptions.
+- Implementaciónm de Rutas hijas forChild.
+- LazyLoad (Carga perezosa).
+- Input para busqueda de personajes ( componente ).
+- Implementación de Decoradores @Input y @Output.
+- Evento (keyup.enter).
+- EventEmitter de @angular/core.
+- Dragon Ball API <https://web.dragonball-api.com/>
+- quicktype para tipado de Api.
+- HttpClientModule.
+- Observable de rxjs
+- Peticiones http(get).
+- Subscribe a Observables
+- *ngfor
+- CatchError - Manejo de errores en Observables.
+- Metodo pipe (rxjs).
+- Operador map.
+- switchMap.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
 
 ## Development server
