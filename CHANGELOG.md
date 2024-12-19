@@ -23,6 +23,13 @@ El formato se adhiere a [Keep a Changelog](https://keepachangelog.com/) y sigue 
 - Enumera cada punto con guiones (-).
 - Sé claro y conciso.
 
+## [1.1.0] -
+
+### Added - 2024-12-18
+
+- Se crea archivo loading-circle component para la carga de imagen alternativa de la imagen de planeta.
+- Se agrega componente loading-car a los cards de transformaciones de los personajes.
+
 ## [1.0.0] - 2024-12-17
 
 ### Added
