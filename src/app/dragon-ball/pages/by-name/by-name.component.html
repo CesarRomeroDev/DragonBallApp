@@ -11,6 +11,7 @@
       </ol>
   </nav>
   <br>
-  <dragon-ball-search-box (onValue)="searchByName($event)" placeholder="Buscar por Nombre"></dragon-ball-search-box>
+  <dragon-ball-search-box (ondebounce)="searchByName($event)" placeholder="Buscar por Nombre"></dragon-ball-search-box>
+  <shared-spin-search *ngIf="isLoading"></shared-spin-search>
   <dragonball-card [dragonBallCard]="characterName"></dragonball-card>
 </div>

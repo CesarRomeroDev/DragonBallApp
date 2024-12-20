@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoadingCardComponent } from './components/loading-card/loading-card.component';
 import { LoadingCircleComponent } from './components/loading-circle/loading-circle.component';
+import { SpinSearchComponent } from './components/spin-search/spin-search.component';
 
 
 
@@ -14,7 +15,8 @@ import { LoadingCircleComponent } from './components/loading-circle/loading-circ
     HeaderComponent,
     SidebarComponent,
     LoadingCardComponent,
-    LoadingCircleComponent
+    LoadingCircleComponent,
+    SpinSearchComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { LoadingCircleComponent } from './components/loading-circle/loading-circ
     HeaderComponent,
     SidebarComponent,
     LoadingCardComponent,
-    LoadingCircleComponent
+    LoadingCircleComponent,
+    SpinSearchComponent,
   ]
 })
 export class SharedModule { }

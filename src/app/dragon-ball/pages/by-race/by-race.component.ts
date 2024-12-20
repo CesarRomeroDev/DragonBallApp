@@ -10,15 +10,18 @@ import { Dragonball } from '../../interfaces/dragonball';
 export class ByRaceComponent {
 
   public characterRace: Dragonball[] = [];
+  public isLoading: boolean = false;
 
   constructor(
     private dragonBallService: DragonballService
   ){}
 
   searchByRace( term: string ){
+    this.isLoading = true;
     this.dragonBallService.searchByRaceServices(term)
       .subscribe( characterRace => {
         this.characterRace = characterRace;
+        this.isLoading = false;
         console.log(this.characterRace);
       });
   }

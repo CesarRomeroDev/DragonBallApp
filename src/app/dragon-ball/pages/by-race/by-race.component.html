@@ -11,6 +11,7 @@
       </ol>
   </nav>
 <br>
-<dragon-ball-search-box (onValue)="searchByRace($event)" placeholder="Buscar por Raza"></dragon-ball-search-box>
+<dragon-ball-search-box (ondebounce)="searchByRace($event)" placeholder="Buscar por Raza"></dragon-ball-search-box>
+<shared-spin-search *ngIf="isLoading"></shared-spin-search>
   <dragonball-card [dragonBallCard]="characterRace" ></dragonball-card>
 </div>

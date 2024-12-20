@@ -25,6 +25,17 @@ El formato se adhiere a [Keep a Changelog](https://keepachangelog.com/) y sigue 
 
 ## [1.1.0] -
 
+### Changed - 2024-12-19
+
+- Refactorización del codigo en lo servicios.
+- Se cambia el evento (keyup.enter) a --> (Keyup) y nuevo Subject para utilizar un pip en el debounceTime de entrada de texto.
+
+### Added - 2024-12-19
+
+- Se crea spinner de busqueda como componente en shared/components/spin-Search
+- Se realiza spinner de busqueda en byName y ByRace.
+- Se agrega caja de texto (Warning alert) para indicar que no hay personajes que mostrar en el componente DragonBall Card.
+
 ### Added - 2024-12-18
 
 - Se crea archivo loading-circle component para la carga de imagen alternativa de la imagen de planeta.
