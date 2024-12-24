@@ -2,10 +2,14 @@
 <!-- full tailwind config using javascript -->
 <!-- https://github.com/neurolinker/popice -->
 
-<!--Shared-Header-->
-<shared-header></shared-header>
+<!--Shared-Header Encabezado compartido-->
+<header>
+  <shared-header></shared-header>
+</header>
 
-<!--Shared-Sidebar-->
-<shared-sidebar></shared-sidebar>
-
-<router-outlet />
+<!--Shared-Sidebar Barra lateral compartida-->
+  <shared-sidebar></shared-sidebar>
+<!--Main-Content Contenido principal-->
+<main>
+  <router-outlet />
+</main>

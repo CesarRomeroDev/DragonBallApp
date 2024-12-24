@@ -6,24 +6,33 @@ El formato se adhiere a [Keep a Changelog](https://keepachangelog.com/) y sigue 
 
 ## Cómo escribir registros por actualización
 
-1. Título de la versión: ## [x.y.z] - YYYY-MM-DD
+1.Título de la versión: ## [x.y.z] - YYYY-MM-DD
 
 - x.y.z es el número de versión (siguiendo SemVer: mayor, menor, parche).
 - YYYY-MM-DD es la fecha de la versión.
 
-2. Categorías de cambios:
+2.Categorías de cambios:
 
 - Usa “Added” para lo nuevo.
 - Usa “Changed” para modificaciones.
 - Usa “Fixed” para errores corregidos.
 - Usa “Removed” para lo eliminado.
 
-3. Formato:
+3.Formato:
 
 - Enumera cada punto con guiones (-).
 - Sé claro y conciso.
 
 ## [1.1.0] -
+
+### Added - 2024-12-23
+
+- Se agrega semantica de etiquetas de html en app.component.html
+- Se agrega "select" en componente by-race.component.html
+
+### Removed - 2024-12-23
+
+- componente search-box de la vista by-race.component.html
 
 ### Changed - 2024-12-19
 
