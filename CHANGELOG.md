@@ -25,6 +25,11 @@ El formato se adhiere a [Keep a Changelog](https://keepachangelog.com/) y sigue 
 
 ## [1.1.0] -
 
+### Added - 2025-01-06
+
+- Mnatener la data entre modulos.
+- Implementación de LocalStorage.
+
 ### Added - 2024-12-23
 
 - Se agrega semantica de etiquetas de html en app.component.html

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Dragonball } from '../../interfaces/dragonball';
 import { DragonballService } from '../../services/dragonball.service';
 
@@ -7,14 +7,20 @@ import { DragonballService } from '../../services/dragonball.service';
   templateUrl: './by-name.component.html',
   styles: ``
 })
-export class ByNameComponent {
+export class ByNameComponent implements OnInit {
 
   public characterName: Dragonball[] = [];
   public isLoading: boolean = false;
+  public initialValue: string = '';
 
   constructor(
     private dragonBallService: DragonballService
   ){}
+
+  ngOnInit(): void {
+    this.characterName = this.dragonBallService.cacheStore.byName.character;
+    this.initialValue = this.dragonBallService.cacheStore.byName.term;
+  }
 
   searchByName(term: string){
     this.isLoading = true;

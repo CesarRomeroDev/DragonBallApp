@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { Dragonball, Dragon, DragonballSuper, Transformation } from '../interfaces/dragonball';
+import { CacheStore } from '../interfaces/cache-store.interface';
+import { Race } from '../interfaces/race.type';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +12,26 @@ export class DragonballService {
 
   private apiUrl: string = 'https://dragonball-api.com/api' //url api Dragon ball
 
+  public cacheStore: CacheStore = {
+    byName:          { term: '', character: [] },
+    byRace:          { term: '', character: [] },
+  }
+
   constructor(
     private http: HttpClient // servicios httpclient de angular.
-  ) { }
+  ) {
+    this.loadFromLocalStorage();
+   }
+
+  private saveToLocalStorage(){
+    localStorage.setItem('cacheStore', JSON.stringify(this.cacheStore));
+  }
+
+  private loadFromLocalStorage(){
+    if( !localStorage.getItem('cacheStore') ) return;
+
+    this.cacheStore = JSON.parse( localStorage.getItem('cacheStore')! );
+  }
 
   //Refactorizacion de los metodos por nombre y por raza
   private getCharactersRequest( url: string ): Observable<Dragonball[]> {
@@ -56,12 +75,20 @@ export class DragonballService {
   //Busqueda por Nombre de personaje.
   searchByNameServices(term: string): Observable<Dragonball[]>{
     const url = `${this.apiUrl}/characters?name=${term}`
-    return this.getCharactersRequest(url);
+    return this.getCharactersRequest(url)
+    .pipe(
+      tap( character => this.cacheStore.byName = { term, character }),
+      tap( () => this.saveToLocalStorage()),
+    )
   }
 
   //Busqueda por raza del personaje.
-  searchByRaceServices( term: string ): Observable<Dragonball[]>{
+  searchByRaceServices( term: Race | string): Observable<Dragonball[]>{
     const url = `${this.apiUrl}/characters?race=${term}`
-    return  this.getCharactersRequest( url );
+    return  this.getCharactersRequest( url )
+    .pipe(
+      tap( character => this.cacheStore.byRace = { term, character } ),
+      tap( () => this.saveToLocalStorage()),
+    )
   }
 }
