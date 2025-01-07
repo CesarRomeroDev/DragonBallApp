@@ -11,6 +11,17 @@
       </ol>
   </nav>
 <br>
-<dragon-ball-search-box (onValue)="searchByRace($event)" placeholder="Buscar por Raza"></dragon-ball-search-box>
+<!-- <dragon-ball-search-box (ondebounce)="searchByRace($event)" placeholder="Buscar por Raza"></dragon-ball-search-box> -->
+<form class="max-w-sm mx-auto">
+  <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecciona una Opción</label>
+  <select id="countries" (change)="onRaceChange($event)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option *ngIf="initialValue!; else selec" selected>{{ initialValue }}</option>
+      <ng-template #selec>
+          <option selected>Selecciona una raza</option>
+      </ng-template>
+    <option *ngFor="let race of races" [value]="race">{{ race }}</option>
+  </select>
+</form>
+<shared-spin-search *ngIf="isLoading"></shared-spin-search>
   <dragonball-card [dragonBallCard]="characterRace" ></dragonball-card>
 </div>

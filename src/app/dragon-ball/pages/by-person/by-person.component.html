@@ -1,10 +1,11 @@
 <div class = "content ml-12 transform ease-in-out duration-500 pt-20 px-2 md:px-5 ">
         <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
           <h2 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">Origen: {{ dragonBallCode?.originPlanet?.name }}</h2>
-          <img class="rounded-full w-96 h-96" [src]="dragonBallCode?.originPlanet?.image" [alt]="dragonBallCode?.originPlanet?.name">
+          <img (load)="onLoad()" [ngStyle]="{ display: hasLoaded ? '' : 'none' }"  class="rounded-full w-96 h-96" [src]="dragonBallCode?.originPlanet?.image" [alt]="dragonBallCode?.originPlanet?.name">
+          <shared-loading-circle *ngIf="!hasLoaded"></shared-loading-circle>
             <h3 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">{{ dragonBallCode?.name }}</h3>
             <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">{{ dragonBallCode?.description }}</p>
-        </div>
+          </div>
 </div>
 
 
@@ -28,7 +29,8 @@
           <h4 class="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">{{transf.name}}</h4>
           <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
             <div>
-              <img class="rounded-t-lg h-96" [src]="transf.image" [alt]="transf.name">
+              <img (load)="onLoad()" [ngStyle]="{ display: hasLoaded ? '' : 'none' }"  class="rounded-t-lg h-96" [src]="transf.image" [alt]="transf.name">
+              <shared-loading-card *ngIf="!hasLoaded"></shared-loading-card>
             </div>
             <figcaption class="absolute px-4 text-lg text-white bottom-6">
               <div class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">

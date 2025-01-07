@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoadingCardComponent } from './components/loading-card/loading-card.component';
+import { LoadingCircleComponent } from './components/loading-circle/loading-circle.component';
+import { SpinSearchComponent } from './components/spin-search/spin-search.component';
 
 
 
@@ -12,7 +14,9 @@ import { LoadingCardComponent } from './components/loading-card/loading-card.com
   declarations: [
     HeaderComponent,
     SidebarComponent,
-    LoadingCardComponent
+    LoadingCardComponent,
+    LoadingCircleComponent,
+    SpinSearchComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,9 @@ import { LoadingCardComponent } from './components/loading-card/loading-card.com
   exports: [
     HeaderComponent,
     SidebarComponent,
-    LoadingCardComponent
+    LoadingCardComponent,
+    LoadingCircleComponent,
+    SpinSearchComponent,
   ]
 })
 export class SharedModule { }
